@@ -24,7 +24,7 @@ class Matricula:
 			if p is False:
 				print('Aluno não existe no sistema!!')
 		dataMatricula = input("Data de Matricula [DD,MM,YYYY]: ")
-		dataSplit = dataMatricula.split()
+		dataSplit = dataMatricula.split('/')
 		self._mesMatricula = dataSplit[1]
 		self._anoMatricula = dataSplit[2]
 		p1 = False
@@ -37,8 +37,9 @@ class Matricula:
 					break
 			if p is False:
 				print('Curso não existe no sistema!!')
+		print('Matricula Cadastrada')
 			
-	def exibirMatricula(self):
+	def exibir(self):
 		return {'id': self._id, 'mesMatricula': self._mesMatricula,
 				'anoMatricula': self._anoMatricula, 'aluno': self._aluno.exibir()['nome'],
 				'curso':self._curso.exibir()['titulo'] }

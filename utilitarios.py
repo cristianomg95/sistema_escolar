@@ -3,12 +3,12 @@ import menu
 def cabecalho(funcaoCarregaBanco):
 	print(' ', end=' ')
 	for i in funcaoCarregaBanco()[0].exibir():
-		print('{:<12}'.format(i), end= '')
+		print('{:<15}'.format(i), end= '')
 	print()
 
 def exibirObjeto(objeto):
 	for j in objeto.exibir().values():
-		print('{:<12}'.format(j), end='')
+		print('{:<15}'.format(j), end='')
 	print()
 
 def mostrarLista(funcaoCarregaBanco):  #parametro passado em forma de lambda
