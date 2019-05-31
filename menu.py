@@ -57,12 +57,13 @@ class Menu:
 2 - Cadastrar Professor
 3 - Cadastrar Funcionario
 4 - Cadastrar Coordenador Administrativo
-5 - Cadastrar Curso
-6 - Fazer Matricula''')
+5 - Cadastrar Coordenador Professor
+6 - Cadastrar Curso
+7 - Fazer Matricula''')
 		p = False
 		while p is False:
 			opc = int(input('Escolhar uma opção: '))
-			if opc in [1,2,3,4,5,6]:
+			if opc in [1,2,3,4,5,6,7]:
 				if opc == 1:
 					system('clear')
 					self.__aluno.cadastrarAluno()
@@ -85,14 +86,20 @@ class Menu:
 					break
 				elif opc == 5:
 					system('clear')
+					self.__coordenadorProf.cadastrarCoordenadorProf()
+					self.__dbCoordenadorPro.saveObject(self.__coordenadorProf)
+					break
+				elif opc == 6:
+					system('clear')
 					self.__curso.cadastrarCurso()
 					self.__dbCurso.saveObject(self.__curso)
 					break
-				elif opc == 6:
+				elif opc == 7:
 					system('clear')
 					self.__matricula.matricular()
 					self.__dbMatricula.saveObject(self.__matricula)
 					break
+
 			else:
 				print('Opção invalida, digite um numero correto!!!')
 
